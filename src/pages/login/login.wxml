@@ -1,0 +1,28 @@
+<view class="loginContainer" style="height:{{scrollHeight}}px;">
+        <loading hidden="{{hidden}}" bindchang="loadingChange">
+            登录中...
+        </loading>
+        <view class="loginBox">
+            <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">
+                {{errorMsg}}
+            </view>
+            <view class="motto">
+                <view class="app-name">HFUT微市场</view>
+            </view>
+            <form bindsubmit="formSubmit" class="loginForm">
+                <view class="inputBox">
+                    <input class="iptStyle" type="number" pattern="[0-9]*" name="userId" placeholder="请输入学号" placeholder-class="ipt-placeholder" />
+                </view>
+                <view class="inputBox">
+                    <input class="iptStyle" type="password" placeholder="请输入密码" name="userPass" placeholder-class="ipt-placeholder" />
+                </view>
+                <view class="myui-btn-area">
+                    <button class="weui-btn weui-btn_plain-primary login-btn" form-type="submit">登录</button>
+                </view>
+                <view>
+                    <button class="weui-btn weui-btn_plain-primary login-btn" form-type="submit">注册</button>
+                </view>
+            </form>
+        </view>
+</view>
+    
