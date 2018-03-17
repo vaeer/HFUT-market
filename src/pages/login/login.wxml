@@ -1,28 +1,33 @@
-<view class="loginContainer" style="height:{{scrollHeight}}px;">
-        <loading hidden="{{hidden}}" bindchang="loadingChange">
-            登录中...
-        </loading>
-        <view class="loginBox">
-            <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">
-                {{errorMsg}}
-            </view>
-            <view class="motto">
-                <view class="app-name">HFUT微市场</view>
-            </view>
-            <form bindsubmit="formSubmit" class="loginForm">
-                <view class="inputBox">
-                    <input class="iptStyle" type="number" pattern="[0-9]*" name="userId" placeholder="请输入学号" placeholder-class="ipt-placeholder" />
-                </view>
-                <view class="inputBox">
-                    <input class="iptStyle" type="password" placeholder="请输入密码" name="userPass" placeholder-class="ipt-placeholder" />
-                </view>
-                <view class="myui-btn-area">
-                    <button class="weui-btn weui-btn_plain-primary login-btn" form-type="submit">登录</button>
-                </view>
-                <view>
-                    <button class="weui-btn weui-btn_plain-primary login-btn" form-type="submit">注册</button>
-                </view>
-            </form>
-        </view>
+<view class="container"> 
+  <view class="login-icon"> 
+  <image class="login-img" src="../../images/logo.png"></image> 
+  </view>
+  
+  <form bindsubmit="formSubmit" class="login-from">
+    <!--账号-->
+   <view class="inputView"> 
+        <image class="nameImage" src="../../images/icon/name.png"></image> 
+        <label class="loginLab">账号</label> 
+        <input class="inputText" placeholder="请输入账号" name="username" /> 
+    </view> 
+    <view class="line"></view> 
+  
+    <!--密码-->
+    <view class="inputView"> 
+        <image class="keyImage" src="../../images/icon/key.png"></image> 
+        <label class="loginLab">密码</label> 
+        <input class="inputText" password="true" placeholder="请输入密码" name="password" /> 
+    </view> 
+  
+ <!--按钮-->
+    <view class="loginBtnView"> 
+        <button class="loginBtn" type="primary" form-type="submit">登录</button> 
+    </view>
+    <view style='display: flex;justify-content: center;'>
+        <text bindtap='register' style='position: relative;right:50px;'>注册账号</text>
+        <text bindtap='modify' style='position: relative;right:-50px;'>修改密码</text>
+    </view>
+ <!--底部说明-->
+  </form>
+ 
 </view>
-    

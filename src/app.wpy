@@ -23,12 +23,14 @@ setStore(store)
 export default class extends wepy.app {
   config = {
     "pages": [
+        "pages/login/login",
+        "pages/login/modify/modify",
+        "pages/login/register/register",
         "pages/index/index",
         "pages/post/post",
-        "pages/info/info",
-        "pages/login/login",
         "pages/buy/buy",
         "pages/sell/sell",
+        "pages/info/info",
         "pages/info/contactUs/contactUs",
         "pages/info/myBuy/myBuy",
         "pages/info/mySell/mySell",
@@ -56,7 +58,7 @@ export default class extends wepy.app {
             },
             {
                 "text": "发布",
-                "pagePath": "pages/sell/sell",
+                "pagePath": "pages/post/post",
                 "iconPath": "images/icon/post.png",
                 "selectedIconPath": "images/icon/post-fill.png"
             },
