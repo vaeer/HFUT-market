@@ -4,19 +4,34 @@
   </view> 
    <view class="login-from"> 
   
+  <!--名字-->
+   <view class="inputView"> 
+        <label class="loginLab">名字:</label> 
+        <input class="inputText" bindinput="nameInput" /> 
+    </view> 
+    <view class="line"></view> 
+
+ <!--性别-->
+    <view class="inputView">
+        <label class="loginLab">性别:</label>
+        <radio-group>
+            <label class="inputText" wx:for="{{item}}">
+                <radio value="item.name" />{{item.value}}
+            </label>
+        </radio-group>
+    </view>
+    <view class="line"></view> 
  <!--账号-->
    <view class="inputView"> 
-        <image class="nameImage" src="../../../images/icon/name.png"></image> 
-        <label class="loginLab">账号</label> 
-        <input class="inputText" placeholder="请输入账号" bindinput="usernameInput" /> 
+        <label class="loginLab">账号:</label> 
+        <input class="inputText" bindinput="usernameInput" /> 
     </view> 
     <view class="line"></view> 
   
     <!--密码-->
     <view class="inputView"> 
-        <image class="keyImage" src="../../../images/icon/key.png"></image> 
-        <label class="loginLab">密码</label> 
-        <input class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" /> 
+        <label class="loginLab">密码:</label> 
+        <input class="inputText" password="true" bindinput="passwordInput" /> 
     </view> 
   
  <!--按钮-->
@@ -24,6 +39,6 @@
     <button class="registerBtn" type="primary" bindtap="register">注册</button> 
     <button type="primary" bindtap="back">返回</button>
  </view>
- </view> 
+ </view>
  <!--底部说明-->
 </view>

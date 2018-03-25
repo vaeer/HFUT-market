@@ -21,23 +21,21 @@ Page({
                     password: password
                 },
                 dataType: 'json',
-                header: {  
-                    'content-type': 'application/x-www-form-urlencoded'
-                },
                 fail: function (res) {
                     console.log(res);
                 },
                 success: function (res) {
                     console.log('登录信息', res);
-                    var msg = res.msg;
-                    var code = res.code;
+                    var msg = res.data.msg;
+                    var code = res.data.code;
+                    console.log(msg, code);
                     if (code == '200') {
                         wx.showToast({
                             title: msg,
                             icon: 'success',
                         })
                         wx.switchTab({
-                            url: '../index/index ',
+                            url: '../index/index',
                         })
                     }
                     else {
@@ -46,7 +44,6 @@ Page({
                             image: '../../images/icon/error.png',
                         })
                     }
-
                 }
             })
         }

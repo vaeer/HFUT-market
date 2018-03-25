@@ -1,4 +1,4 @@
-var HOST_URL = "https://127.0.0.1:8000";
+var HOST_URL = "http://127.0.0.1:8000";
 
 
 //通过函数获取url
