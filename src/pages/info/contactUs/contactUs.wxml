@@ -1,0 +1,15 @@
+<text>
+    Hfut微市场是为了方便工大学子二手物品、二手书交易的交流平台，目前还在制作当中。
+    如果有什么好的点子，请联系qq<text style="font-color:red; font-size:1.2rem;">731088324</text>，我们会把它做的更好。
+</text>
+
+
+<view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="请写下您的意见或建议" style="height: 3.3em" />
+                    <view class="weui-textarea-counter">0/200</view>
+                </view>
+            </view>
+        </view>
+<button type="primary" size="default"loading="{{buttonLoading}}" bindtap="bindSubmit"> 发送 </button>

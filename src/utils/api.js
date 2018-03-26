@@ -13,7 +13,12 @@ function _Register() {
     return HOST_URL + "/userRegister";
 }
 
+function _Modify() {
+    return HOST_URL + "/userModify";
+}
+
 module.exports = {
     Login: _Login,
-    Register: _Register
+    Register: _Register,
+    Modify: _Modify,
 }

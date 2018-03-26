@@ -1,0 +1,18 @@
+.setinput{
+  border:1px solid;
+  background-color:white;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.settext{
+  font-size: 17px;
+  padding: 5px;
+}
+
+.setbtn{
+  margin-top: 10px; 
+  width:100%;
+  background-color:#66CD00;
+  color:white;
+}

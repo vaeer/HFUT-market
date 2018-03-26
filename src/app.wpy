@@ -1,114 +1,108 @@
 <style lang="less">
-@import "utils/weui.wxss";
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
+    @import "utils/weui.wxss";
+    .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
 </style>
 
 <script>
-import wepy from 'wepy'
-import 'wepy-async-function'
-
-import { setStore } from 'wepy-redux'
-import configStore from './store'
-
-const store = configStore()
-setStore(store)
-
-export default class extends wepy.app {
-  config = {
-    "pages": [
-        "pages/login/login",
-        "pages/login/modify/modify",
-        "pages/login/register/register",
-        "pages/index/index",
-        "pages/post/post",
-        "pages/buy/buy",
-        "pages/sell/sell",
-        "pages/info/info",
-        "pages/info/contactUs/contactUs",
-        "pages/info/myBuy/myBuy",
-        "pages/info/mySell/mySell",
-        "pages/info/myFollower/myFollower",
-        "pages/info/mySetting/mySetting"
-    ],
-    "window": {
-        "backgroundTextStyle": "dark",
-        "navigationBarBackgroundColor": "#EA262C",
-        "navigationBarTitleText": "HFUT微市场",
-        "navigationBarTextStyle": "white",
-        "backgroundColor": "white"
-    },
-    "tabBar": {
-        "color": "#969A9E",
-        "selectedColor": "#000",
-        "borderStyle": "#333",
-        "backgroundColor": "#fff",
-        "list": [
-            {
-                "text": "主页",
-                "pagePath": "pages/index/index",
-                "iconPath": "images/icon/index.png",
-                "selectedIconPath": "images/icon/index-fill.png"
+    import wepy from 'wepy'
+    import 'wepy-async-function'
+    import {
+        setStore
+    } from 'wepy-redux'
+    import configStore from './store'
+    const store = configStore()
+    setStore(store)
+    export default class extends wepy.app {
+        config = {
+            "pages": [
+                "pages/info/info",
+                "pages/index/index",
+                "pages/index/books/books",
+                "pages/index/goods/goods",
+                "pages/login/login",
+                "pages/login/modify/modify",
+                "pages/login/register/register",
+                "pages/sell/sell",
+                "pages/sell/books/books",
+                "pages/sell/goods/goods",
+                "pages/info/contactUs/contactUs",
+                "pages/info/myBuy/myBuy",
+                "pages/info/mySell/mySell",
+                "pages/info/myFollower/myFollower",
+                "pages/info/mySetting/mySetting"
+            ],
+            "window": {
+                "backgroundTextStyle": "dark",
+                "navigationBarBackgroundColor": "#EA262C",
+                "navigationBarTitleText": "HFUT微市场",
+                "navigationBarTextStyle": "white",
+                "backgroundColor": "#eee"
             },
-            {
-                "text": "发布",
-                "pagePath": "pages/post/post",
-                "iconPath": "images/icon/post.png",
-                "selectedIconPath": "images/icon/post-fill.png"
-            },
-            {
-                "text": "个人中心",
-                "pagePath": "pages/info/info",
-                "iconPath": "images/icon/user.png",
-                "selectedIconPath": "images/icon/user-fill.png"
+            "tabBar": {
+                "color": "#969A9E",
+                "selectedColor": "#000",
+                "borderStyle": "#333",
+                "backgroundColor": "#fff",
+                "list": [{
+                        "text": "主页",
+                        "pagePath": "pages/index/index",
+                        "iconPath": "images/icon/index.png",
+                        "selectedIconPath": "images/icon/index-fill.png"
+                    },
+                    {
+                        "text": "发布",
+                        "pagePath": "pages/sell/sell",
+                        "iconPath": "images/icon/post.png",
+                        "selectedIconPath": "images/icon/post-fill.png"
+                    },
+                    {
+                        "text": "个人中心",
+                        "pagePath": "pages/info/info",
+                        "iconPath": "images/icon/user.png",
+                        "selectedIconPath": "images/icon/user-fill.png"
+                    }
+                ]
             }
-        ]
+        }
+        globalData = {
+            userInfo: null
+        }
+        constructor() {
+            super()
+            this.use('requestfix')
+        }
+        onLaunch() {
+            this.testAsync()
+        }
+        sleep(s) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('promise resolved')
+                }, s * 1000)
+            })
+        }
+        async testAsync() {
+            const data = await this.sleep(3)
+            console.log(data)
+        }
+        getUserInfo(cb) {
+            const that = this
+            if (this.globalData.userInfo) {
+                return this.globalData.userInfo
+            }
+            wepy.getUserInfo({
+                success(res) {
+                    that.globalData.userInfo = res.userInfo
+                    cb && cb(res.userInfo)
+                }
+            })
+        }
     }
-}
-
-  globalData = {
-    userInfo: null
-  }
-
-  constructor () {
-    super()
-    this.use('requestfix')
-  }
-
-  onLaunch() {
-    this.testAsync()
-  }
-
-  sleep (s) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve('promise resolved')
-      }, s * 1000)
-    })
-  }
-
-  async testAsync () {
-    const data = await this.sleep(3)
-    console.log(data)
-  }
-
-  getUserInfo(cb) {
-    const that = this
-    if (this.globalData.userInfo) {
-      return this.globalData.userInfo
-    }
-    wepy.getUserInfo({
-      success (res) {
-        that.globalData.userInfo = res.userInfo
-        cb && cb(res.userInfo)
-      }
-    })
-  }
-}
 </script>

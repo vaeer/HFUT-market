@@ -1,0 +1,28 @@
+<view class="weui-panel__bd">
+  <view class="item1">
+    <navigator url="books/books" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image class="weui-media-box__thumb" src="../../../images/icon/book.png" />
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">
+          <text>看旧书</text>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <view class="item2">
+    <navigator url="goods/goods" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image class="weui-media-box__thumb" src="../../images/icon/goods.png" />
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">
+          <text>看旧物</text>
+        </view>
+      </view>
+    </navigator>
+  </view>
+
+
+</view>

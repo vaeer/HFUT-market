@@ -1,13 +1,14 @@
 <view class="container"> 
   <view class="login-icon"> 
-  <image class="login-img" src="../../images/logo.png"></image> 
+  <image class="login-img" src="../../images/logo.png"></image>
+  <text id="title">Hfut微市场</text>
   </view>
   
   <form bindsubmit="formSubmit" class="login-from">
     <!--账号-->
    <view class="inputView"> 
         <image class="nameImage" src="../../images/icon/name.png"></image> 
-        <label class="loginLab">账号</label> 
+        <label class="loginLab">账号:</label> 
         <input class="inputText" placeholder="请输入账号" name="username" /> 
     </view> 
     <view class="line"></view> 
@@ -15,7 +16,7 @@
     <!--密码-->
     <view class="inputView"> 
         <image class="keyImage" src="../../images/icon/key.png"></image> 
-        <label class="loginLab">密码</label> 
+        <label class="loginLab">密码:</label> 
         <input class="inputText" password="true" placeholder="请输入密码" name="password" /> 
     </view> 
   
@@ -25,7 +26,7 @@
     </view>
     <view style='display: flex;justify-content: center;'>
         <text bindtap='register' style='position: relative;right:50px;'>注册账号</text>
-        <text bindtap='modify' style='position: relative;right:-50px;'>修改密码</text>
+        <text bindtap='modify' style='position: relative;right:-50px;'>忘记密码?</text>
     </view>
  <!--底部说明-->
   </form>

@@ -1,0 +1,27 @@
+text{
+  display:flex;
+  justify-content: space-around;
+  font-size: 25px;
+}
+
+.item1{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 200px;
+    height: 90px;
+    transform: translate(-50%, -50%);
+    border: solid #333 3px;
+    border-radius: 10px;
+}
+
+.item2{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    width: 200px;
+    height: 90px;
+    transform: translate(-50%, -50%);
+    border: solid #333 3px;
+    border-radius: 10px;
+}

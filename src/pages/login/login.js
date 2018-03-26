@@ -34,9 +34,12 @@ Page({
                             title: msg,
                             icon: 'success',
                         })
-                        wx.switchTab({
-                            url: '../index/index',
-                        })
+                        setTimeout(function(){
+                            wx.switchTab({
+                                url: '../index/index',
+                            })
+                        }, 800);
+                        
                     }
                     else {
                         wx.showToast({
